@@ -171,3 +171,24 @@ input, select, textarea {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px var(--color-primary-light);
 }
+
+/* Workload dashboard motion */
+@keyframes wl-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wl-slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes wl-beacon {
+  0% { box-shadow: 0 0 0 0 var(--color-error); }
+  70% { box-shadow: 0 0 0 6px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-wl-motion] { animation: none !important; transition: none !important; }
+}

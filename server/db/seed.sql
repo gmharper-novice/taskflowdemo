@@ -72,11 +72,11 @@ INSERT INTO tasks (title, description, status, priority, assignee_id, project_id
   ('Add loading skeletons to task list', 'Replace spinner with skeleton loading states', 'todo', 'low', 5, 1, date('now', '+14 days'), 4),
   ('Clean up unused CSS variables', 'Audit and remove deprecated tokens from old design', 'todo', 'low', 5, 1, date('now', '+18 days'), 3);
 
--- More tasks for Olivia (6) — medium workload, QA focus
+-- More tasks for Olivia (6) — at-risk workload (4 high), QA focus
 INSERT INTO tasks (title, description, status, priority, assignee_id, project_id, due_date, estimated_hours) VALUES
-  ('Write E2E tests for project CRUD', 'Cover create, edit, delete flows with Playwright', 'todo', 'medium', 6, 1, date('now', '+7 days'), 6),
+  ('Write E2E tests for project CRUD', 'Cover create, edit, delete flows with Playwright', 'todo', 'high', 6, 1, date('now', '+7 days'), 6),
   ('Regression test API v2 endpoints', 'Full regression pass on migrated endpoints before launch', 'todo', 'high', 6, 2, date('now', '+6 days'), 8),
-  ('Test mobile auth flow', 'Verify biometric login on iOS and Android test devices', 'todo', 'medium', 6, 3, date('now', '+10 days'), 4);
+  ('Test mobile auth flow', 'Verify biometric login on iOS and Android test devices', 'todo', 'high', 6, 3, date('now', '+10 days'), 4);
 
 -- Settings
 INSERT INTO settings (key, value) VALUES

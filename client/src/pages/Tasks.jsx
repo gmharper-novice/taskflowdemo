@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useTasks } from '../hooks/useTasks';
 import { useTeam } from '../hooks/useTeam';
 import { useApi } from '../hooks/useApi';
@@ -25,7 +26,8 @@ const headerRowStyle = {
 
 export default function Tasks() {
   const [view, setView] = useState('list');
-  const [filters, setFilters] = useState({});
+  const [searchParams] = useSearchParams();
+  const [filters, setFilters] = useState(() => ({ status: searchParams.get('status') || undefined }));
   const [showForm, setShowForm] = useState(false);
   const { data: tasks, loading, refetch } = useTasks(filters);
   const { data: teamMembers } = useTeam();
